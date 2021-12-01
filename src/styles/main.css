@@ -1,0 +1,17 @@
+:root{
+    --red:#F14C58;
+    --dark-red: #84143D;
+    --blue:#35B0F2;
+    --dark-blue: #096190;
+    --yellow: #F2EE66;
+    --white:#ECF8FE;
+    --dark: #032335;
+}
+
+body{
+    background-color: var(--red);
+}
+.header__logo{
+    margin: 10px 40px;
+    width: 7em;
+}
