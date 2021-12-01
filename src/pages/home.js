@@ -1,31 +1,31 @@
-// const Home = () => {
-//     const view = `
-//       <div class="Characters">
-//         <article class="Character-item">
-//           <a href="#/1/">
-//             <img src="image" alt="name">
-//             <h2>Name</h2>
-//           </a>
-//         </article>
-//       </div>
-//     `;
-//     return view;
-//   };
-  
-//   export default Home;
+import getData from "../utils/getData";
+import Character from "./Character";
 
-const Home = () => {
-  const view = `
-    <div class="Characters">
-      <article class="Character-item">
-        <a href="#/1/">
-          <img src="image" alt="name">
-          <h2>Name</h2>
-        </a>
-      </article>
-    </div>
-  `;
-  return view;
-};
+const Home = async () => {
+  const Characters = await getData()
 
-export default Home;
+    const view =  Characters.map(item => {
+      return `
+        <article class="Character-item">
+          <a href="#/${item.id}/">
+            <img class="Character__img" src="${item.thumbnail.path}.${item.thumbnail.extension}" alt="${item.name}">
+            <h2 class="Character__name">${item.name}</h2>
+          </a>
+        </article>
+      `
+    }).join('')
+    return view
+}
+const rta = Home()
+
+console.log(rta);
+export default Home
+
+  //     const rta = `
+  //     <img src="${item.thumbnail.path}.${item.thumbnail.extension}" alt="${item.name}">
+  //     //       <h2>${item.name}</h2>
+  //     `
+  //     console.log(rta);
+  //     return rta
+  //   }).join('')
+  // return view;
