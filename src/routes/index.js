@@ -10,8 +10,8 @@ import resolveRoutes from "../utils/resolveRoutes"
 const routes = {
     '/': Home,
     '/:id': Character,
-    '/no-hay-error-aqui-xd': "Sin errores xd"
-}
+    '/contact': 'Contact',
+  };
 
 //Manejador de nustras rutas
 const router = async () => {
@@ -22,8 +22,8 @@ const router = async () => {
     let hash = getHash();
     let route = await resolveRoutes(hash);
     let render = routes[route] ? routes[route] : Error404;
+    console.log(".....",render);
     content.innerHTML = await render();
-
 }
 
 export default router

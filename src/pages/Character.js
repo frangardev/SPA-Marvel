@@ -1,27 +1,33 @@
-// const Character = () => {
-//     const view = `
-        
-//     `
-//     return view
-// }
+import getHash from '../utils/getHash';
+import getData from '../utils/getData';
 
-// export default Character
+import Error404 from './Error404';
 
-const Character = () => {
-    const view = `
+const Character = async () => {
+  const id = getHash();
+  const chara = await getData();
+  //Chara guarda todos los personajes
+  const characterViewArry = chara.filter(item => item.id == id)
+  //characterViewArry filtra y regresa solo el que el id concida con el del personaje, pero debuelce un array
+  const characterView = characterViewArry[0]
+  //CharacterView es el objeto final del personaje
+  console.log(characterView);
+
+  //Por si el hash no funciona o es incorrecto
+  if(characterView == undefined){
+    return Error404
+  }
+
+
+
+  const view = `
       <div class="Characters-inner">
         <article class="Characters-card">
-          <img src="image" alt="name">
-          <h2>Name</h2>
+          <img src="${characterView.thumbnail.path}.${characterView.thumbnail.extension}" alt="${characterView.name}">
+          <h2>${characterView.name}</h2>
         </article>
-        <article class="Characters-card">
-          <h3>Episodes:</h3>
-          <h3>Status:</h3>
-          <h3>Species:</h3>
-          <h3>Gender:</h3>
-          <h3>Origin:</h3>
-          <h3>Last Location:</h3>
-        </article>
+        <article class="Characters__card">
+          <p class="Characters-description">${characterView.description}</p>
       </div>
     `;
     return view;

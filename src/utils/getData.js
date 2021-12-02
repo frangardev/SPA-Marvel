@@ -9,7 +9,7 @@ const getData = async (id) =>{
         // console.log( data.data.results );
         return data.data.results
     }catch (error){
-        console.error("Fetch Error ", error);
+        console.log("Fetch Error: ", error);
     }
 }
 

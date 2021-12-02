@@ -20,12 +20,3 @@ const rta = Home()
 
 console.log(rta);
 export default Home
-
-  //     const rta = `
-  //     <img src="${item.thumbnail.path}.${item.thumbnail.extension}" alt="${item.name}">
-  //     //       <h2>${item.name}</h2>
-  //     `
-  //     console.log(rta);
-  //     return rta
-  //   }).join('')
-  // return view;
