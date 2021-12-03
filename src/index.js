@@ -1,4 +1,5 @@
 import router from './routes'
+import 'normalize.css'
 import './styles/main.css'
 
 

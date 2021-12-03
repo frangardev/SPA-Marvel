@@ -28,17 +28,17 @@ const Character = async () => {
 
   const view = `
       <div class="Characters-inner">
-        <article class="Characters-card">
-          <img src="${characterView.thumbnail.path}.${characterView.thumbnail.extension}" alt="${characterView.name}">
+        <article class="Characters__card Characters__card-1">
+          <img class="Characters__card-img" src="${characterView.thumbnail.path}.${characterView.thumbnail.extension}" alt="${characterView.name}">
           <h2>${characterView.name}</h2>
           <p class="Characters-description">${characterView.description}</p>
         </article>
-        <article class="Characters__card">
+        <article class="Characters__card Characters__card-2">
           <h3>Series: </h3>
           <ul>${series}</ul>
           <h3>Comics:</h3>
           <ul>${comics}</ul>
-          <a href="${characterView.urls[1].url}" target="_blank" >wiki</a>
+          <a class="wiki" href="${characterView.urls[1].url}" target="_blank" >wiki</a>
       </div>
     `;
     return view;
