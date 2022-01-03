@@ -114,13 +114,16 @@ a{
     justify-items: center;
     border-radius: 20px;
     background-color: var(--white2);
+    margin: 10px;
+    padding-bottom: 2em;
 }
 .Characters__card{
     height: auto;
+    width: 80%;
 }
 .Characters__card-1{
-    width: 70%;
-    min-width: 250px;
+    /* width: 70%; */
+    min-width: 220px;
 }
 .Characters__card-img{
     width: 95%;
@@ -144,10 +147,13 @@ a{
     font-size: 1.2rem;
     color: var(--dark);
 }
+.Characters__card ul{
+    margin-bottom: 15px;
+}
 .wiki{
     color: var(--dark-blue);
     position: absolute;
-    bottom: 10px;
+    bottom: -10px;
     right: 10px;
     font-size: 1.2rem;
 }
